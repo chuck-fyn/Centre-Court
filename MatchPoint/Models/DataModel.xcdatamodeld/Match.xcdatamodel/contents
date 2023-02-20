@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="DataModel">
+    <entity name="Match" representedClassName=".Match" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="duration" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="gameOver" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="numberOfSets" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="player1Name" optional="YES" attributeType="String"/>
+        <attribute name="player2Name" optional="YES" attributeType="String"/>
+        <attribute name="set" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tieBreak" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Player" inverseName="parentMatch" inverseEntity="Player"/>
+    </entity>
+    <entity name="Player" representedClassName=".Player" syncable="YES" codeGenerationType="class">
+        <attribute name="games" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isServing" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isWinner" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="points" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="resigned" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="scoreString" optional="YES" attributeType="String"/>
+        <attribute name="set1Games" optional="YES" attributeType="String" valueTransformerName="" customClassName=".NSMutableAttributedString"/>
+        <attribute name="set2Games" optional="YES" attributeType="String" valueTransformerName="" customClassName=".NSMutableAttributedString"/>
+        <attribute name="set3Games" optional="YES" attributeType="String" valueTransformerName="" customClassName=".NSMutableAttributedString"/>
+        <attribute name="set4Games" optional="YES" attributeType="String" valueTransformerName="" customClassName=".NSMutableAttributedString"/>
+        <attribute name="set5Games" optional="YES" attributeType="String" valueTransformerName="" customClassName=".NSMutableAttributedString"/>
+        <attribute name="sets" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="parentMatch" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Match" inverseName="players" inverseEntity="Match"/>
+    </entity>
+</model>
